@@ -1,41 +1,54 @@
 import Head from 'next/head'
+import Card from 'react-bootstrap/Card'
+import CardDeck from 'react-bootstrap/CardDeck'
         function Body(props){
             return(
                 <div>
                     <main>
-                        <p className="description">
-                            Get started by editing <code>pages/index.js</code>
-                        </p>
+                      
 
-                        <div className="grid">
-                            <a href="https://nextjs.org/docs" className="card">
-                            <h3>Documentation &rarr;</h3>
-                            <p>Find in-depth information about Next.js features and API.</p>
-                            </a>
-
-                            <a href="https://nextjs.org/learn" className="card">
-                            <h3>Learn &rarr;</h3>
-                            <p>Learn about Next.js in an interactive course with quizzes!</p>
-                            </a>
-
-                            <a
-                            href="https://github.com/vercel/next.js/tree/master/examples"
-                            className="card"
-                            >
-                            <h3>Examples &rarr;</h3>
-                            <p>Discover and deploy boilerplate example Next.js projects.</p>
-                            </a>
-
-                            <a
-                            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                            className="card"
-                            >
-                            <h3>Deploy &rarr;</h3>
-                            <p>
-                                Instantly deploy your Next.js site to a public URL with Vercel.
-                            </p>
-                            </a>
-                        </div>
+                        <CardDeck>
+                            <Card>
+                                <Card.Img variant="top" src="microphone.svg" />
+                                <Card.Body>
+                                <Card.Title>Card title</Card.Title>
+                                <Card.Text>
+                                    This is a wider card with supporting text below as a natural lead-in to
+                                    additional content. This content is a little bit longer.
+                                </Card.Text>
+                                </Card.Body>
+                                <Card.Footer>
+                                <small className="text-muted">Last updated 3 mins ago</small>
+                                </Card.Footer>
+                            </Card>
+                            <Card>
+                                <Card.Img variant="top" src="microphone.svg" />
+                                <Card.Body>
+                                <Card.Title>Card title</Card.Title>
+                                <Card.Text>
+                                    This card has supporting text below as a natural lead-in to additional
+                                    content.{' '}
+                                </Card.Text>
+                                </Card.Body>
+                                <Card.Footer>
+                                <small className="text-muted">Last updated 3 mins ago</small>
+                                </Card.Footer>
+                            </Card>
+                            <Card>
+                                <Card.Img variant="top" src="microphone.svg" />
+                                <Card.Body>
+                                <Card.Title>Card title</Card.Title>
+                                <Card.Text>
+                                    This is a wider card with supporting text below as a natural lead-in to
+                                    additional content. This card has even longer content than the first to
+                                    show that equal height action.
+                                </Card.Text>
+                                </Card.Body>
+                                <Card.Footer>
+                                <small className="text-muted">Last updated 3 mins ago</small>
+                                </Card.Footer>
+                            </Card>
+                        </CardDeck>
                         
                     </main>
                     <style jsx>{`

@@ -13,9 +13,7 @@ export default function Home() {
         <Body></Body>
       </div>
     <div className="container">
-      
         <Header></Header>
-     
       </div>
 
       <style jsx>{`
