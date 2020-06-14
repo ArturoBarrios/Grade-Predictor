@@ -1,5 +1,6 @@
 import FilePicker from './filePicker'
 import Loading from './loading';
+import GradedComponent from './gradedComponent'
 import Card from 'react-bootstrap/Card'
 
 
@@ -27,7 +28,8 @@ class Grader extends React.Component {
       return (
         <div>
           {/* <FilePicker></FilePicker> */}
-          <Loading></Loading>
+          {/* <Loading></Loading> */}
+          <GradedComponent></GradedComponent>
         </div>
       );
     }
