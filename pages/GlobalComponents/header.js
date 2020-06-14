@@ -11,7 +11,7 @@ function Header(props){
             <img
                 alt=""
                 src="/microphone.svg"
-                style={{ height: 100, width: 236 }}
+                style={{ height: 200, width: 236 }}
                 className="d-inline-block align-middle"
             />{' '}
             

@@ -1,9 +1,8 @@
-
 import Navbar from 'react-bootstrap/Navbar';
 
 
 
-function Footer(props){
+function footer(props){
     return(
         <div style={{width:"100%"}} > 
        
@@ -12,10 +11,7 @@ function Footer(props){
             <img
                 alt=""
                 src="/microphone.svg"
-                style={{ height: 100, width: 236 }}
-
-                
-                
+                style={{ height: 400, width: 236 }}
                 className="d-inline-block align-middle"
             />{' '}
             
@@ -27,4 +23,4 @@ function Footer(props){
 
 }
 
-export default Footer;
+export default footer;

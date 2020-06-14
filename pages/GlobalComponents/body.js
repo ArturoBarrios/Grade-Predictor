@@ -2,10 +2,13 @@ import Head from 'next/head'
 import Card from 'react-bootstrap/Card'
 import CardDeck from 'react-bootstrap/CardDeck'
 import Cards from './cardsComponent'
+import FilePicker from './filePicker'
         function Body(props){
             return(
-                <div>
+                <div >
+                    
                     <main>
+                    <FilePicker></FilePicker>
                         <Cards></Cards>
                         
                     </main>
@@ -35,12 +38,13 @@ import Cards from './cardsComponent'
         
 
         main {
-          padding: 5rem 0;
+        //   padding: 5rem 0;
           flex: 1;
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          align-items: center;
+          
+        //   justify-content: center;
+        //   align-items: center;
         }
 
         footer {

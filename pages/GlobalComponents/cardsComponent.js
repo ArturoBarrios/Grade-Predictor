@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Card from 'react-bootstrap/Card'
 import CardDeck from 'react-bootstrap/CardDeck'
 
-        function Cards(props){
+        function cards(props){
             return(
                 <div>
                     <main>
@@ -59,4 +59,4 @@ import CardDeck from 'react-bootstrap/CardDeck'
         }
 
 
-export default Cards;
+export default cards;
