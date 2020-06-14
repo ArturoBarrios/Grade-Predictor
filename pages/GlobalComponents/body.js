@@ -3,12 +3,14 @@ import Card from 'react-bootstrap/Card'
 import CardDeck from 'react-bootstrap/CardDeck'
 import Cards from './cardsComponent'
 import FilePicker from './filePicker'
+import Grader from './Grader'
         function Body(props){
             return(
                 <div >
                     
                     <main>
-                    <FilePicker></FilePicker>
+                    {/* <FilePicker></FilePicker> */}
+                    <Grader></Grader>
                         <Cards></Cards>
                         
                     </main>
