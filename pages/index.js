@@ -18,7 +18,7 @@ export default function Home() {
 
       <style jsx>{`
       .container {
-        // border: solid 1px #ff0000;
+        border: solid 1px #ff0000;
         zoom: 1; /* IE6&7 */
         //  min-height: 100vh;
           padding: 0 0.5rem;
