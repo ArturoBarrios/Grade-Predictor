@@ -10,6 +10,7 @@ class Grader extends React.Component {
       super(props);
       this.state = {gradeState: 0};
       this.fileHandler = this.fileHandler.bind(this)
+      
     }
     
     fileHandler(object){
@@ -29,16 +30,15 @@ class Grader extends React.Component {
             gradeState: 0
         })
     }
-  
-  
+
     render() {
-     
       return (
         <div>
-          
-          <FilePicker fileHandler={this.fileHandler}></FilePicker>
-          {/* <Loading></Loading> */}
-          {/* <GradedComponent></GradedComponent> */}
+          {
+            this.state.gradeState == 0 ? <FilePicker fileHandler={this.fileHandler}></FilePicker>
+            : this.state.gradeState == 1 ? <Loading></Loading>
+            : <GradedComponent></GradedComponent>
+          }
         </div>
       );
     }

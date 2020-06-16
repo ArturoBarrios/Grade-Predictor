@@ -6,10 +6,6 @@ class filePicker extends React.Component{
     constructor(props){
         super(props);
     }
-    // onChange(){
-    //     console.log("nicceeee")
-    //     this.props.handler();
-    // }
     render(){
         return(
             <Card className="text-center">
