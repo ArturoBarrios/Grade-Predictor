@@ -9,8 +9,15 @@ class Grader extends React.Component {
     constructor(props) {
       super(props);
       this.state = {gradeState: 0};
+      this.fileHandler = this.fileHandler.bind(this)
     }
-  
+    
+    fileHandler(object){
+      console.log("file handler called: ", object);
+      this.setState({
+        gradeState: 1
+      })
+    }
     componentDidMount() {
       this.setState({
           gradeState: 0
@@ -25,11 +32,13 @@ class Grader extends React.Component {
   
   
     render() {
+     
       return (
         <div>
-          {/* <FilePicker></FilePicker> */}
+          
+          <FilePicker fileHandler={this.fileHandler}></FilePicker>
           {/* <Loading></Loading> */}
-          <GradedComponent></GradedComponent>
+          {/* <GradedComponent></GradedComponent> */}
         </div>
       );
     }

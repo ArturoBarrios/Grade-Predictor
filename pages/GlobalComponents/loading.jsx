@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card'
 function loading(){
     return(
         <Card className="text-center">
-        <Card.Header>Grade Predictor</Card.Header>
+        <Card.Header></Card.Header>
         <Card.Body>
             <Card.Title>Computing Grade</Card.Title>
             <Card.Text>
