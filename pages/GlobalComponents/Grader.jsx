@@ -15,9 +15,15 @@ class Grader extends React.Component {
     
     fileHandler(object){
       console.log("file handler called: ", object);
+      //todo
+      //pass files to model for grade prediction
       this.setState({
         gradeState: 1
       })
+    }
+
+    loadingHandler(){
+      
     }
     componentDidMount() {
       this.setState({
