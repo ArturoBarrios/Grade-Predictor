@@ -2,10 +2,12 @@ import FilePicker from './filePicker'
 import Loading from './loading';
 import GradedComponent from './gradedComponent'
 import Card from 'react-bootstrap/Card'
+import axios from 'axios';
 
 
 
 class Grader extends React.Component {
+  
     constructor(props) {
       super(props);
       this.state = {gradeState: 0};
@@ -13,23 +15,42 @@ class Grader extends React.Component {
       
     }
     
+ 
+  
     fileHandler(object){
       console.log("file handler called: ", object);
-      //todo
-      //pass files to model for grade prediction
+
+      
       this.setState({
         gradeState: 1
       })
+      console.log("api url: ", process.env.REACT_APP_API_URL)
+      axios.get('http://localhost:5000/grade')
+      .then(res => {
+        console.log("res: ", res)
+        this.resultState();
+      }).catch(err =>{
+        this.fileState();
+      })
     }
 
-    loadingHandler(){
-      
+    fileState() {
+      this.setState({
+        gradeState: 0
+      })
+    }
+
+    resultState(){
+      this.setState({
+        gradeState: 2
+      })
     }
     componentDidMount() {
       this.setState({
           gradeState: 0
       })
     }
+    
   
     componentWillUnmount() {
         this.setState({

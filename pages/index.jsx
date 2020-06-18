@@ -2,7 +2,9 @@ import Head from 'next/head'
 import Header from './GlobalComponents/header'
 import Footer from './GlobalComponents/footer'
 import Body from './GlobalComponents/body'
+
 export default function Home() {
+
   return (
     <div >
 
