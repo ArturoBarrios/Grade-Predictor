@@ -18,6 +18,10 @@ class filePicker extends React.Component{
                 <div className="mb-3">
                     <input style={{marginLeft: "20%"}} type="file" multiple
                     onChange={(event) =>{
+                        // let data = new FormData();
+                        // data.append("file",event.target.files[0])
+                        // console.log("data: ", data)
+                        console.log("file on change: ", event.target.files[0])
                         this.props.fileHandler(event.target.files)
                     }} />
                 </div>

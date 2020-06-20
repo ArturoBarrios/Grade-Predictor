@@ -17,21 +17,31 @@ class Grader extends React.Component {
     
  
   
-    fileHandler(object){
-      console.log("file handler called: ", object);
-
+    fileHandler(files){
+      console.log("file handler called: ", files);
       
-      this.setState({
-        gradeState: 1
+      const formData = new FormData();
+      for (var i = 0; i < files.length; i++) {
+        var file = files[i];
+        formData.append("file"+i,file);
+      }
+      
+      // formData.append("file", file);
+      console.log("formData: ", formData);
+
+      axios.post('http://localhost:5000/get_grades', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+       
       })
-      console.log("api url: ", process.env.REACT_APP_API_URL)
-      axios.get('http://localhost:5000/grade')
-      .then(res => {
-        console.log("res: ", res)
-        this.resultState();
-      }).catch(err =>{
-        this.fileState();
-      })
+        .then(res => {
+          console.log("res: ", res)
+          this.resultState();
+        }).catch(err =>{
+          console.log("errrr: ", err)
+          this.fileState();
+        });
     }
 
     fileState() {
