@@ -25,9 +25,6 @@ class Grader extends React.Component {
         var file = files[i];
         formData.append("file"+i,file);
       }
-      
-      // formData.append("file", file);
-      console.log("formData: ", formData);
 
       axios.post('http://localhost:5000/get_grades', formData, {
         headers: {
