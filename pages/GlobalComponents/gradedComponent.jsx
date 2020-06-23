@@ -4,7 +4,7 @@ import Carousel from 'react-bootstrap/Carousel'
 import Accordion from 'react-bootstrap/Accordion'
 
 
-function gradedComponent(){
+function gradedComponent(props){
     return(
         <Accordion>
             <Card className="text-center">
@@ -23,25 +23,19 @@ function gradedComponent(){
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Nocturne Opus 9 No.2</td>
-                                <td>8</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>The Dark Knight Rises Main Theme</td>
-                                <td>7</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Main Theme from Interstellar</td>
-                                <td>8</td>
-                            </tr>
+                        {
+                            Object.keys(props.songs).map((key,index)=>(
+                                <tr>
+                                    <td>{index}</td>
+                                    <td>{key}</td>
+                                    <td>{props.songs[key]}</td>
+                                </tr>
+                            ))
+                        }
                         </tbody>
                     </Table>
                     <Card.Title>Similar Songs</Card.Title>
-                    <Table striped bordered hover size="sm">
+                    {/* <Table striped bordered hover size="sm">
                         <thead>
                             <tr>
                             <th>#</th>
@@ -81,7 +75,7 @@ function gradedComponent(){
                                 <td>7</td>
                             </tr>
                         </tbody>
-                    </Table>
+                    </Table> */}
                 </Card.Body>
                 <Card.Footer className="text-muted"></Card.Footer>
             </Card>

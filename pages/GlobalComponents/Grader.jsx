@@ -11,6 +11,7 @@ class Grader extends React.Component {
     constructor(props) {
       super(props);
       this.state = {gradeState: 0};
+      this.state = {gradedSongs: []}
       this.fileHandler = this.fileHandler.bind(this)
       
     }
@@ -18,7 +19,7 @@ class Grader extends React.Component {
  
   
     fileHandler(files){
-      console.log("file handler called: ", files);
+      this.filesChosen();
       
       const formData = new FormData();
       for (var i = 0; i < files.length; i++) {
@@ -34,7 +35,7 @@ class Grader extends React.Component {
       })
         .then(res => {
           console.log("res: ", res)
-          this.resultState();
+          this.resultState(res.data);
         }).catch(err =>{
           console.log("errrr: ", err)
           this.fileState();
@@ -47,9 +48,19 @@ class Grader extends React.Component {
       })
     }
 
-    resultState(){
+    resultState(grades){
+      
+      this.setState({
+        gradedSongs: grades
+      });
+      console.log("result gradedSongs: ", this.state.gradedSongs)
       this.setState({
         gradeState: 2
+      })
+    }
+    filesChosen() {
+      this.setState({
+          gradeState: 1
       })
     }
     componentDidMount() {
@@ -71,7 +82,7 @@ class Grader extends React.Component {
           {
             this.state.gradeState == 0 ? <FilePicker fileHandler={this.fileHandler}></FilePicker>
             : this.state.gradeState == 1 ? <Loading></Loading>
-            : <GradedComponent></GradedComponent>
+            : <GradedComponent songs={this.state.gradedSongs}></GradedComponent>
           }
         </div>
       );
