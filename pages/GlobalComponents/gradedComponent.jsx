@@ -35,47 +35,6 @@ function gradedComponent(props){
                         </tbody>
                     </Table>
                     <Card.Title>Similar Songs</Card.Title>
-                    {/* <Table striped bordered hover size="sm">
-                        <thead>
-                            <tr>
-                            <th>#</th>
-                            <th>File Name</th>
-                            <th>Grade</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Spongebob Squarepants Main Theme Song</td>
-                                <td>8</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Fur Elise</td>
-                                <td>8</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Mazurka in F Major</td>
-                                <td>7</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Yellow</td>
-                                <td>7</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Gladiator Main Theme</td>
-                                <td>7</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>Champions League Theme Song</td>
-                                <td>7</td>
-                            </tr>
-                        </tbody>
-                    </Table> */}
                 </Card.Body>
                 <Card.Footer className="text-muted"></Card.Footer>
             </Card>

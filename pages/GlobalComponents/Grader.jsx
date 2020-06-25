@@ -1,4 +1,4 @@
-import FilePicker from './filePicker'
+import Configure from './Configure'
 import Loading from './loading';
 import GradedComponent from './gradedComponent'
 import Card from 'react-bootstrap/Card'
@@ -80,7 +80,7 @@ class Grader extends React.Component {
       return (
         <div>
           {
-            this.state.gradeState == 0 ? <FilePicker fileHandler={this.fileHandler}></FilePicker>
+            this.state.gradeState == 0 ? <Configure fileHandler={this.fileHandler}></Configure>
             : this.state.gradeState == 1 ? <Loading></Loading>
             : <GradedComponent songs={this.state.gradedSongs}></GradedComponent>
           }
