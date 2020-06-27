@@ -3,12 +3,24 @@ import Dropdown from './dropdown'
 
 
 
-function configure(props){
-    return(
-        <div>
-            <FilePicker bodyItem={<Dropdown></Dropdown>} fileHandler={props.fileHandler}></FilePicker>
-            
-        </div>
-    )
+class Configure extends React.Component {
+    constructor(props) {
+        super(props);
+        
+      }
+    componentDidMount(){
+        
+    }
+    componentWillUnmount(){
+        
+    }
+    render(){
+        return(
+            <div>
+                <FilePicker bodyItem={<Dropdown modelChosen={this.props.modelChosen}></Dropdown>} fileHandler={this.props.fileHandler}></FilePicker>
+                
+            </div>
+        )
+    }
 }
-export default configure;
+export default Configure;

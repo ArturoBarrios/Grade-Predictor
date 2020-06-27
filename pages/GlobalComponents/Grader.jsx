@@ -11,8 +11,10 @@ class Grader extends React.Component {
     constructor(props) {
       super(props);
       this.state = {gradeState: 0};
-      this.state = {gradedSongs: []}
+      this.state = {gradedSongs: []};
+      this.state = {model: 0}
       this.fileHandler = this.fileHandler.bind(this)
+      this.modelChosen = this.modelChosen.bind(this)
       
     }
     
@@ -20,7 +22,6 @@ class Grader extends React.Component {
   
     fileHandler(files){
       this.filesChosen();
-      
       const formData = new FormData();
       for (var i = 0; i < files.length; i++) {
         var file = files[i];
@@ -30,7 +31,11 @@ class Grader extends React.Component {
       axios.post('http://localhost:5000/get_grades', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
-        }
+        },
+        params:{
+          'model': this.state.model
+        },
+        
        
       })
         .then(res => {
@@ -48,8 +53,7 @@ class Grader extends React.Component {
       })
     }
 
-    resultState(grades){
-      
+    resultState(grades){    
       this.setState({
         gradedSongs: grades
       });
@@ -58,11 +62,19 @@ class Grader extends React.Component {
         gradeState: 2
       })
     }
+
+    modelChosen(chosenModel) {
+      console.log("model chosen: ", chosenModel)
+      this.setState({
+        model: chosenModel
+      })
+    }
     filesChosen() {
       this.setState({
           gradeState: 1
       })
     }
+    
     componentDidMount() {
       this.setState({
           gradeState: 0
@@ -80,7 +92,7 @@ class Grader extends React.Component {
       return (
         <div>
           {
-            this.state.gradeState == 0 ? <Configure fileHandler={this.fileHandler}></Configure>
+            this.state.gradeState == 0 ? <Configure modelChosen={this.modelChosen} fileHandler={this.fileHandler}></Configure>
             : this.state.gradeState == 1 ? <Loading></Loading>
             : <GradedComponent songs={this.state.gradedSongs}></GradedComponent>
           }

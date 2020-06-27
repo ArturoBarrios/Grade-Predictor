@@ -7,12 +7,17 @@ class DropDown extends React.Component {
     constructor(props) {
         super(props);
         this.state = {chosenModel: "Choose a model"};
-        this.selectModel = this.selectModel.bind(this)
+        this.modelSelected = this.modelSelected.bind(this);
+        this.testEvent = this.testEvent.bind(this);
       }
-      selectModel(event){
+      modelSelected(event){
         this.setState({
-            chosenModel: event
-          })
+          chosenModel: event
+        })
+        this.props.modelChosen(event);
+      }
+      testEvent(){
+        console.log("test event");
       }
       componentDidMount() {
         this.setState({
@@ -27,7 +32,7 @@ class DropDown extends React.Component {
       render(){
         return(
             <div style={{}}>
-                <Dropdown onSelect={this.selectModel} >
+                <Dropdown onSelect={this.modelSelected } >
                     <Dropdown.Toggle   variant="success" id="dropdown-basic">
                         {this.state.chosenModel}
                     </Dropdown.Toggle>
