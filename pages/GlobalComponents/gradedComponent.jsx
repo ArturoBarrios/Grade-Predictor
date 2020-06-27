@@ -23,14 +23,16 @@ function gradedComponent(props){
                             </tr>
                         </thead>
                         <tbody>
+                            
                         {
-                            // Object.keys(props.songs).map((key,index)=>(
-                            //     <tr>
-                            //         <td>{index}</td>
-                            //         <td>{key}</td>
-                            //         <td>{props.songs[key]}</td>
-                            //     </tr>
-                            // ))
+                         props.songs &&  
+                            Object.keys(props.songs).map((key,index)=>(
+                                <tr>
+                                    <td>{index}</td>
+                                    <td>{key}</td>
+                                    <td>{props.songs[key]}</td>
+                                </tr>
+                            ))
                         }
                         </tbody>
                     </Table>
