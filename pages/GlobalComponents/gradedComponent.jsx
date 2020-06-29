@@ -2,6 +2,7 @@ import Card from 'react-bootstrap/Card'
 import Table from 'react-bootstrap/Table'
 import Carousel from 'react-bootstrap/Carousel'
 import Accordion from 'react-bootstrap/Accordion'
+import Button from 'react-bootstrap/Button'
 
 
 function gradedComponent(props){
@@ -36,7 +37,7 @@ function gradedComponent(props){
                         }
                         </tbody>
                     </Table>
-                    <Card.Title>Similar Songs</Card.Title>
+                    <Button  style={{width:"30%", marginTop: "20px", marginBottom:"10px"}} variant="primary" onClick={props.resetFunction}>Reset</Button>
                 </Card.Body>
                 <Card.Footer className="text-muted"></Card.Footer>
             </Card>

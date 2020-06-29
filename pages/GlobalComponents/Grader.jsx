@@ -12,23 +12,66 @@ class Grader extends React.Component {
       super(props);
       this.state = {gradeState: 0};
       this.state = {gradedSongs: []};
-      this.state = {model: 0}
+      this.state = {model: null}
+      this.state = {formDataFiles: null};
+      this.state = {fileNames: []}
       this.fileHandler = this.fileHandler.bind(this)
       this.modelChosen = this.modelChosen.bind(this)
+      this.gradeSongsHandler = this.gradeSongsHandler.bind(this)
+      this.resetStates = this.resetStates.bind(this)
       
     }
     
  
   
     fileHandler(files){
-      this.filesChosen();
       const formData = new FormData();
       for (var i = 0; i < files.length; i++) {
         var file = files[i];
         formData.append("file"+i,file);
       }
+      this.setState({
+        formDataFiles: formData
+      })
+      this.setFileNames(formData);
+      
+      
+    }
+    
+    resetStates(){
+      this.setState({
+        gradeState: 0
+      })
+      this.setState({
+        gradedSongs: []
+      })
+      this.setState({
+        model: null
+      })
+      this.setState({
+        formDataFiles: null
+      })
+      this.setState({
+        fileNames: null
+      })
 
-      axios.post('http://localhost:5000/get_grades', formData, {
+    }
+
+    setFileNames(formData){
+      var files = [];
+      console.log("form data files: ", formData)
+      for(var pair of formData.entries()) {
+        files.push(pair[1].name) 
+      }
+      this.setState({
+        fileNames: files
+      })
+     return files;
+    }
+
+    gradeSongsHandler(){
+      this.filesChosen();
+      axios.post('http://localhost:5000/get_grades', this.state.formDataFiles, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },
@@ -45,6 +88,7 @@ class Grader extends React.Component {
           console.log("errrr: ", err)
           this.fileState();
         });
+
     }
 
     fileState() {
@@ -69,19 +113,18 @@ class Grader extends React.Component {
         model: chosenModel
       })
     }
+
     filesChosen() {
       this.setState({
           gradeState: 1
       })
     }
-    
+
     componentDidMount() {
       this.setState({
           gradeState: 0
       })
     }
-    
-  
     componentWillUnmount() {
         this.setState({
             gradeState: 0
@@ -92,9 +135,9 @@ class Grader extends React.Component {
       return (
         <div>
           {
-            this.state.gradeState == 0 ? <Configure modelChosen={this.modelChosen} fileHandler={this.fileHandler}></Configure>
+            this.state.gradeState == 0 ? <Configure  fileNames={this.state.fileNames} gradeFunction={this.gradeSongsHandler} modelChosen={this.modelChosen} fileHandler={this.fileHandler}></Configure>
             : this.state.gradeState == 1 ? <Loading></Loading>
-            : <GradedComponent songs={this.state.gradedSongs}></GradedComponent>
+            : <GradedComponent resetFunction={this.resetStates} songs={this.state.gradedSongs}></GradedComponent>
           }
         </div>
       );
