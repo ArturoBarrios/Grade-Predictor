@@ -29,18 +29,8 @@ class Configure extends React.Component {
             <Card.Body>
                 <Card.Title>Choose a File to Grade</Card.Title>
                 <Card.Text>
-                {/* With supporting text below as a natural lead-in to additional content. */}
-                </Card.Text>
-                {/* <div className="">
-                    <input style={{marginLeft: "20%"}} type="file" multiple
-                    onChange={(event) =>{
-                        console.log("file on change: ", event.target.files[0])
-                        this.props.fileHandler(event.target.files)
-                        this.filesChosen();
-
-                    }} />
-                </div> */}
-                <FilePicker fileHandler={this.props.fileHandler}></FilePicker>
+                </Card.Text>       
+                <FilePicker didChooseFile={this.props.didChooseFile} fileHandler={this.props.fileHandler}></FilePicker>
                 <SongList fileNames={this.props.fileNames}></SongList>
             </Card.Body>
             <Dropdown modelChosen={this.props.modelChosen}></Dropdown>

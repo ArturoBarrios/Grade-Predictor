@@ -43,7 +43,8 @@ class SongList extends React.Component {
                 
                 <ListGroup variant="flush">
                     {
-                        this.props.fileNames.map(function(fileName, index){
+                      
+                        this.props.fileNames&&this.props.fileNames.map(function(fileName, index){
                             return <ListGroup.Item>{fileName}</ListGroup.Item>
                         }) 
                     }

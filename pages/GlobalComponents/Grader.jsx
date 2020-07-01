@@ -11,10 +11,12 @@ class Grader extends React.Component {
     constructor(props) {
       super(props);
       this.state = {gradeState: 0};
-      this.state = {gradedSongs: []};
+      this.state = {gradedSongs: []}
       this.state = {model: null}
-      this.state = {formDataFiles: null};
+      this.state = {formDataFiles: null}
       this.state = {fileNames: []}
+      this.state = {didChooseFile: false}
+      this.state = {didChooseModel: false}
       this.fileHandler = this.fileHandler.bind(this)
       this.modelChosen = this.modelChosen.bind(this)
       this.gradeSongsHandler = this.gradeSongsHandler.bind(this)
@@ -34,8 +36,6 @@ class Grader extends React.Component {
         formDataFiles: formData
       })
       this.setFileNames(formData);
-      
-      
     }
     
     resetStates(){
@@ -70,24 +70,33 @@ class Grader extends React.Component {
     }
 
     gradeSongsHandler(){
-      this.filesChosen();
-      axios.post('http://localhost:5000/get_grades', this.state.formDataFiles, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        },
-        params:{
-          'model': this.state.model
-        },
-        
-       
-      })
-        .then(res => {
-          console.log("res: ", res)
-          this.resultState(res.data);
-        }).catch(err =>{
-          console.log("errrr: ", err)
-          this.fileState();
-        });
+      var fileChosen = this.state.fileNames!=null;
+      var modelChosen = this.state.modelChosen!=null;
+      if(!fileChosen){
+        console.log("file not chosen")
+      }
+      if(!modelChosen){
+        console.log("model not chosen")
+      }
+      console.log("bool values: ", fileChosen, "  ", modelChosen)
+      if(modelChosen&&fileChosen){
+        this.filesChosen();
+        axios.post('http://localhost:5000/get_grades', this.state.formDataFiles, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          },
+          params:{
+            'model': this.state.model
+          },
+        })
+          .then(res => {
+            console.log("res: ", res)
+            this.resultState(res.data);
+          }).catch(err =>{
+            console.log("errrr: ", err)
+            this.fileState();
+          });
+      }
 
     }
 
@@ -135,7 +144,7 @@ class Grader extends React.Component {
       return (
         <div>
           {
-            this.state.gradeState == 0 ? <Configure  fileNames={this.state.fileNames} gradeFunction={this.gradeSongsHandler} modelChosen={this.modelChosen} fileHandler={this.fileHandler}></Configure>
+            this.state.gradeState == 0 ? <Configure didChooseFile={this.state.didChooseFile} didChooseModel={this.state.didChooseModel}  fileNames={this.state.fileNames} gradeFunction={this.gradeSongsHandler} modelChosen={this.modelChosen} fileHandler={this.fileHandler}></Configure>
             : this.state.gradeState == 1 ? <Loading></Loading>
             : <GradedComponent resetFunction={this.resetStates} songs={this.state.gradedSongs}></GradedComponent>
           }
