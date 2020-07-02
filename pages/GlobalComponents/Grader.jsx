@@ -71,7 +71,7 @@ class Grader extends React.Component {
 
     gradeSongsHandler(){
       var fileChosen = this.state.fileNames!=null;
-      var modelChosen = this.state.modelChosen!=null;
+      var modelChosen = this.state.model!=null;
       if(!fileChosen){
         console.log("file not chosen")
       }
