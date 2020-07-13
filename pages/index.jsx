@@ -8,19 +8,19 @@ export default function Home() {
   return (
     <div >
 
-     <div className="container"  >
+     <div style={{height: "350px"}} className="container"  >
       <Header></Header>
      </div>
      <div className="container">
         <Body></Body>
       </div>
     <div className="container">
-        <Footer></Footer>
+        <Footer ></Footer>
       </div>
 
       <style jsx>{`
       .container {
-        border: solid 1px #ff0000;
+        // border: solid 1px #ff0000;
         zoom: 1; /* IE6&7 */
         //  min-height: 100vh;
           padding: 0 0.5rem;

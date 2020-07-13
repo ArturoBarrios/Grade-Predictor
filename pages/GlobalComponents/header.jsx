@@ -4,18 +4,20 @@ import Navbar from 'react-bootstrap/Navbar';
 
 function Header(props){
     return(
-        <div style={{width:"100%"}} > 
+        <div style={{width:"100%", backgroundColor: "lightGrey"}} > 
        
-        <Navbar bg="dark" variant="dark">
+        <Navbar >
             <Navbar.Brand href="#home">
-            <img
-                alt=""
-                src="/microphone.svg"
-                style={{ height: 200, width: 236 }}
-                className="d-inline-block align-middle"
-            />{' '}
+                <div style={{display: "flex",justifyContent: 'center'}}>
+                    <img
+                        alt=""
+                        src="/logoText2.png"
+                        style={{ width: "100%" }}
+                        className="d-inline-block align-middle"
+                    />{' '}
+            </div>
             
-            Piano Song Grade Predictor
+
             </Navbar.Brand>
         </Navbar>
     </div>
