@@ -15,7 +15,9 @@ export default function Home() {
         <Body></Body>
       </div>
     <div className="container">
-        <Footer ></Footer>
+        <Footer >
+          
+        </Footer>
       </div>
 
       <style jsx>{`
