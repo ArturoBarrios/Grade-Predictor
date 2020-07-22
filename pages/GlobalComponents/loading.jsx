@@ -8,7 +8,7 @@ function loading(){
         <Card.Body>
             <Card.Title>Computing Grade</Card.Title>
             <Card.Text>
-            Please wait while the model works its magic...
+            calculating grade...
             </Card.Text>
             <Spinner animation="border" variant="primary" />
         </Card.Body>
