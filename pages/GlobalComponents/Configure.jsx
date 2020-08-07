@@ -29,7 +29,7 @@ class Configure extends React.Component {
             <Card.Body>
                 <Card.Title>Choose a File to Grade</Card.Title>
                 <Card.Text>
-                    Supported formats: (ABC, Capella, ClerqTemperley, Humdrum, MEI, MIDI, MuseData, MusicXML, Noteworthy, NoteworthyBinary, RomanText, Scala, TinyNotation, and Volpiano)
+                    
                 </Card.Text>       
                 <FilePicker didChooseFile={this.props.didChooseFile} fileHandler={this.props.fileHandler}></FilePicker>
                 {/* <SongList fileNames={this.props.fileNames}></SongList> */}
