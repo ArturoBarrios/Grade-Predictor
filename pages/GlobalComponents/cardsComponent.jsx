@@ -54,7 +54,7 @@ import Button from 'react-bootstrap/Button'
                                 <Card.Body>
                                 <Card.Title>Grade Predictors</Card.Title>
                                 <Card.Text>
-                                    <Accordion defaultActiveKey="0">
+                                    <Accordion defaultActiveKey="">
                                         <Card>
                                             <Accordion.Toggle as={Card.Header} eventKey="0">
                                             ABRSM
