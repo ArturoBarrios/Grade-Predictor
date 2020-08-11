@@ -81,7 +81,7 @@ class Grader extends React.Component {
       console.log("bool values: ", fileChosen, "  ", modelChosen)
       if(modelChosen&&fileChosen){
         this.filesChosen();
-        axios.post('http://localhost:5000/get_grades', this.state.formDataFiles, {
+        axios.post('https://grade-predictor-api.herokuapp.com/get_grades', this.state.formDataFiles, {
           headers: {
             'Content-Type': 'multipart/form-data'
           },
