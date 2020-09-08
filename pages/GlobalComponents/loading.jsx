@@ -8,7 +8,7 @@ function loading(){
         <Card.Body>
             <Card.Title>Computing Grade</Card.Title>
             <Card.Text>
-            calculating grade...
+            This may take a few minutes for longer pieces of music...
             </Card.Text>
             <Spinner animation="border" variant="primary" />
         </Card.Body>
