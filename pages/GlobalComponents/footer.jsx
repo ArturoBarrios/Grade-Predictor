@@ -21,16 +21,16 @@ function footer(props){
             
             </Navbar.Brand>
             <div style={{marginRight:"0px"}}>
-                <div style={{marginLeft:"20px"}}>Social Media</div>
+                <div style={{marginLeft:"20px"}}></div>
             <Container>
                 
                 <Row>
-                    <Col md={2}>
+                    <Col md={3}>
                         <SocialMediaIconsReact borderColor="rgba(0,0,0,0.25)" borderWidth="5" borderStyle="solid" icon="github" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(2,3,4,1)" iconSize="5" roundness="20%" url="https://github.com/ArturoBarrios/MusicClassification" size="50" />
                     </Col>
-                    <Col md={{ span: 2, offset: 1 }}>
+                    {/* <Col md={{ span: 2, offset: 1 }}>
                         <SocialMediaIconsReact borderColor="rgba(0,0,0,0.25)" borderWidth="2" borderStyle="solid" icon="messenger" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(43,146,253,1)" iconSize="5" roundness="20%" url="https://www.facebook.com/arturo.barrios.505/" size="50" />
-                    </Col>
+                    </Col> */}
                     <Col md={{ span: 4, offset: 1 }}>
                         <SocialMediaIconsReact borderColor="rgba(0,0,0,0.25)" borderWidth="2" borderStyle="solid" icon="mail" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(211,13,13,1)" iconSize="5" roundness="20%" url="mailto:arturobarrios357@gmail.com" size="50" />
                     </Col>

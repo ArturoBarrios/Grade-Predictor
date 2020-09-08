@@ -16,7 +16,7 @@ import Button from 'react-bootstrap/Button'
                             <Card>
                                 <Card.Img style = {{"height": 200}} variant="top" src="how.svg" />
                                 <Card.Body>
-                                <Card.Title>How to use</Card.Title>
+                                <Card.Title style={{textAlign: "center"}}>How to use</Card.Title>
                                 <Card.Text>
                                 <Accordion defaultActiveKey="">
                                     <Card>
@@ -59,7 +59,7 @@ import Button from 'react-bootstrap/Button'
                             <Card>
                                 <Card.Img style={{"height": 200}} variant="top" src="model.svg" />
                                 <Card.Body>
-                                <Card.Title>Grade Predictors</Card.Title>
+                                <Card.Title style={{textAlign: "center"}}>Grade Predictors</Card.Title>
                                 <Card.Text>
                                     <Accordion defaultActiveKey="">
                                     <Card >
@@ -110,7 +110,7 @@ import Button from 'react-bootstrap/Button'
                             <Card>
                                 <Card.Img style={{"height": 200}} variant="top" src="update.svg" />
                                 <Card.Body>
-                                <Card.Title>Plans for future</Card.Title>
+                                <Card.Title style={{textAlign: "center"}}>Plans for future</Card.Title>
                                 <Card.Text>
                                     <Accordion defaultActiveKey="">
                                         <Card>
