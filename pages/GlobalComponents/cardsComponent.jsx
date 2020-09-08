@@ -20,21 +20,28 @@ import Button from 'react-bootstrap/Button'
                                 <Card.Text>
                                 <Accordion defaultActiveKey="">
                                     <Card>
-                                        <Accordion.Toggle as={Card.Header} eventKey="0">
+                                        <Accordion.Toggle as={Button} style={{textAlign: 'left' , backgroundColor:'lightGrey'}}  eventKey="0">
                                         choose a list of music files that you want to grade.
-                                        <br></br><br></br>Expand to see supported files
+                                        {/* <br></br><br></br>Expand to see supported files */}
                                         </Accordion.Toggle>
                                         <Accordion.Collapse eventKey="0">
                                         <Card.Body>ABC, Capella, ClerqTemperley, Humdrum, MEI, MIDI, MuseData, MusicXML, NoteworthyBinary, RomanText, Scala, TinyNotation, and Volpiano. 
-                                            <br></br> <br></br>This list might be updated. This list 
-                                            might be updated. <br></br> <br></br> Check out <a href="https://web.mit.edu/music21/doc/usersGuide/usersGuide_08_installingMusicXML.html">this link </a>
-                                            to see all the available file formats. 
+                                         <br></br> <br></br> Check out <a href="https://web.mit.edu/music21/doc/usersGuide/usersGuide_08_installingMusicXML.html">this link </a>
+                                            to see the latest list of supported file formats. 
                                             </Card.Body>
                                         </Accordion.Collapse>
                                     </Card>
                                     <Card>
                                         <Accordion.Toggle as={Card.Header} eventKey="">
-                                        Choose a model to grade your pieces. 
+                                        Choose a grade predictor model to grade your pieces. 
+                                        </Accordion.Toggle>
+                                        <Accordion.Collapse eventKey="1">
+                                        <Card.Body></Card.Body>
+                                        </Accordion.Collapse>
+                                    </Card>
+                                    <Card>
+                                        <Accordion.Toggle as={Card.Header} eventKey="">
+                                        Wait for predictor to finish grading all pieces.  
                                         </Accordion.Toggle>
                                         <Accordion.Collapse eventKey="1">
                                         <Card.Body></Card.Body>
@@ -55,11 +62,25 @@ import Button from 'react-bootstrap/Button'
                                 <Card.Title>Grade Predictors</Card.Title>
                                 <Card.Text>
                                     <Accordion defaultActiveKey="">
-                                        <Card>
-                                            <Accordion.Toggle as={Card.Header} eventKey="0">
-                                            ABRSM
+                                    <Card >
+                                            <Accordion.Toggle as={Card.Header} as={Button} style={{textAlign: 'left' , backgroundColor:'lightGrey'}} eventKey="0">
+                                            Versions
                                             </Accordion.Toggle>
                                             <Accordion.Collapse eventKey="0">
+                                            <Card.Body>
+                                            <ListGroup>
+                                                <ListGroup.Item>V1: No Scaling|No Feature Reduction</ListGroup.Item>
+                                                <ListGroup.Item>V2: Scaling|No Feature Reduction</ListGroup.Item>
+                                                <ListGroup.Item>V3: Scaling|Feature Reduction</ListGroup.Item>
+                                             </ListGroup>
+                                            </Card.Body>
+                                            </Accordion.Collapse>
+                                        </Card>
+                                        <Card >
+                                            <Accordion.Toggle as={Card.Header} as={Button} style={{textAlign: 'left' , backgroundColor:'lightGrey'}} eventKey="0">
+                                            ABRSM
+                                            </Accordion.Toggle>
+                                            <Accordion.Collapse eventKey="1">
                                             <Card.Body>
                                             <ListGroup>
                                                 <ListGroup.Item>ABRSM 2019-2020</ListGroup.Item>
@@ -70,11 +91,11 @@ import Button from 'react-bootstrap/Button'
                                             </Accordion.Collapse>
                                         </Card>
                                         <Card>
-                                            <Accordion.Toggle as={Card.Header} eventKey="1">
+                                            <Accordion.Toggle as={Card.Header} as={Button} style={{textAlign: 'left' , backgroundColor:'lightGrey'}} eventKey="1">
                                             Piano Marvel
                                             </Accordion.Toggle>
-                                            <Accordion.Collapse eventKey="1">
-                                            <Card.Body>5000+ songs</Card.Body>
+                                            <Accordion.Collapse eventKey="2">
+                                            <Card.Body>5000+ songs of varying genres</Card.Body>
                                             </Accordion.Collapse>
                                         </Card>
                                     </Accordion>
