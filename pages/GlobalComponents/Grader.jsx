@@ -29,6 +29,7 @@ class Grader extends React.Component {
     fileHandler(files){
       const formData = new FormData();
       for (var i = 0; i < files.length; i++) {
+      
         var file = files[i];
         formData.append("file"+i,file);
       }
@@ -79,10 +80,13 @@ class Grader extends React.Component {
         console.log("model not chosen")
       }
       console.log("bool values: ", fileChosen, "  ", modelChosen)
+      console.log("files chosen: ", this.state.formDataFiles)
       if(modelChosen&&fileChosen){
         this.filesChosen();
-        axios.post('https://grade-predictor-api.herokuapp.com/get_grades', this.state.formDataFiles, {
+        axios.post('http://127.0.0.1:5000/get_grades', this.state.formDataFiles, {
           headers: {
+            'Access-Control-Allow-Origin' : '*',
+            'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
             'Content-Type': 'multipart/form-data'
           },
           params:{
