@@ -43,7 +43,7 @@ import Button from 'react-bootstrap/Button'
                                         <Accordion.Toggle as={Card.Header} eventKey="">
                                         Wait for predictor to finish grading all pieces.  
                                         </Accordion.Toggle>
-                                        <Accordion.Collapse eventKey="1">
+                                        <Accordion.Collapse eventKey="2">
                                         <Card.Body></Card.Body>
                                         </Accordion.Collapse>
                                     </Card>
@@ -77,7 +77,7 @@ import Button from 'react-bootstrap/Button'
                                             </Accordion.Collapse>
                                         </Card>
                                         <Card >
-                                            <Accordion.Toggle as={Card.Header} as={Button} style={{textAlign: 'left' , backgroundColor:'lightGrey'}} eventKey="0">
+                                            <Accordion.Toggle as={Card.Header} as={Button} style={{textAlign: 'left' , backgroundColor:'lightGrey'}} eventKey="1">
                                             ABRSM
                                             </Accordion.Toggle>
                                             <Accordion.Collapse eventKey="1">
@@ -91,7 +91,7 @@ import Button from 'react-bootstrap/Button'
                                             </Accordion.Collapse>
                                         </Card>
                                         <Card>
-                                            <Accordion.Toggle as={Card.Header} as={Button} style={{textAlign: 'left' , backgroundColor:'lightGrey'}} eventKey="1">
+                                            <Accordion.Toggle as={Card.Header} as={Button} style={{textAlign: 'left' , backgroundColor:'lightGrey'}} eventKey="2">
                                             Piano Marvel
                                             </Accordion.Toggle>
                                             <Accordion.Collapse eventKey="2">
@@ -133,7 +133,7 @@ import Button from 'react-bootstrap/Button'
                                             <Accordion.Toggle as={Card.Header} eventKey="">
                                             Incorporating more instruments (e.g., Trumpet, guitar, and bass guitar)
                                             </Accordion.Toggle>
-                                            <Accordion.Collapse eventKey="1">
+                                            <Accordion.Collapse eventKey="2">
                                             <Card.Body></Card.Body>
                                             </Accordion.Collapse>
                                         </Card>

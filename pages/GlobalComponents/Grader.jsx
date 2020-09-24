@@ -146,7 +146,7 @@ class Grader extends React.Component {
 
     render() {
       return (
-        <div>
+        <div style={{zIndex: "1"}}>
           {
             this.state.gradeState == 0 ? <Configure didChooseFile={this.state.didChooseFile} didChooseModel={this.state.didChooseModel}  fileNames={this.state.fileNames} gradeFunction={this.gradeSongsHandler} modelChosen={this.modelChosen} fileHandler={this.fileHandler}></Configure>
             : this.state.gradeState == 1 ? <Loading></Loading>

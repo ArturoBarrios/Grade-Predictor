@@ -18,7 +18,6 @@ function gradedComponent(props){
                     <Table striped bordered hover size="sm">
                         <thead>
                             <tr>
-                            <th>#</th>
                             <th>File Name</th>
                             <th>Grade</th>
                             </tr>
@@ -29,7 +28,6 @@ function gradedComponent(props){
                          props.songs &&  
                             Object.keys(props.songs).map((key,index)=>(
                                 <tr>
-                                    <td>{index}</td>
                                     <td>{key}</td>
                                     <td>{props.songs[key]}</td>
                                 </tr>
