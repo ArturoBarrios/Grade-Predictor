@@ -136,18 +136,6 @@ class Configure extends React.Component {
                         
                         <Card.Footer className="text-muted"></Card.Footer>
                     </Card>
-                        {/* <Accordion style={{ margin:"0 auto"}} defaultActiveKey="0">
-                            <Card>
-                                <Card.Header>
-                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                    Click me!
-                                </Accordion.Toggle>
-                                </Card.Header>
-                                <Accordion.Collapse eventKey="0">
-                                <Card.Body>Hello! I'm the body</Card.Body>
-                                </Accordion.Collapse>
-                            </Card>
-                        </Accordion> */}
                     </Tab>
                     
                 </Tabs>
