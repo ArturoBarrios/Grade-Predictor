@@ -38,7 +38,7 @@ class Configure extends React.Component {
     render(){
         return(
             <div style={{zIndex:"1"}}>
-                <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
+                <Tabs defaultActiveKey="home" transition={false} id="uncontrolled-tab-example">
                     <Tab eventKey="home" title="Home">
                     <Card className="text-center">
                         <Card.Header></Card.Header>
