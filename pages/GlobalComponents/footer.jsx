@@ -10,8 +10,8 @@ function footer(props){
     return(
         <div style={{width:"100%", backgroundColor: "lightGrey"}} > 
        
-        <Navbar>
-            <Navbar.Brand href="#home">
+        <div style={{display:"flex"}}>
+            {/* <Navbar.Brand href="#home"> */}
             <img
                 alt=""
                 src="/logo.png"
@@ -19,26 +19,33 @@ function footer(props){
                 className="d-inline-block align-middle"
             />{' '}
             
-            </Navbar.Brand>
-            <div style={{marginRight:"0px"}}>
-                <div style={{marginLeft:"20px"}}></div>
-            <Container>
+            {/* </Navbar.Brand> */}
+            <Container style={{marginTop:"3em"}}>
                 
                 <Row>
-                    {/* <Col md={3}>
-                        <SocialMediaIconsReact borderColor="rgba(0,0,0,0.25)" borderWidth="5" borderStyle="solid" icon="github" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(2,3,4,1)" iconSize="5" roundness="20%" url="https://github.com/ArturoBarrios/MusicClassification" size="50" />
-                    </Col>
-                    {/* <Col md={{ span: 2, offset: 1 }}>
-                        <SocialMediaIconsReact borderColor="rgba(0,0,0,0.25)" borderWidth="2" borderStyle="solid" icon="messenger" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(43,146,253,1)" iconSize="5" roundness="20%" url="https://www.facebook.com/arturo.barrios.505/" size="50" />
-                    </Col> */}
-                    {/* <Col md={{ span: 4, offset: 1 }}>
-                        <SocialMediaIconsReact borderColor="rgba(0,0,0,0.25)" borderWidth="2" borderStyle="solid" icon="mail" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(211,13,13,1)" iconSize="5" roundness="20%" url="mailto:arturobarrios357@gmail.com" size="50" />
-                    </Col> */}
+                    <Col  xs={3}><h3 style={{color: "rgb(2 95 130)"}}>Resources</h3></Col>
+                    <Col  xs={3}><h3 style={{color: "rgb(2 95 130)"}}>Project</h3></Col>
+                    
                 </Row>
-                
+                <Row>
+                    <Col  xs={3}><ul>
+                    <li ><a style={{color: "rgb(2 95 130)"}} href="https://scikit-learn.org/stable/" target="_blank">Scikit-learn</a></li>
+                    <li><a style={{color: "rgb(2 95 130)"}} href="http://web.mit.edu/music21/" target="_blank">Music21</a></li>
+                    <li><a style={{color: "rgb(2 95 130)"}} href="http://jmir.sourceforge.net/jSymbolic.html" target="_blank">Jsymbolic</a></li>
+                    </ul></Col>
+                    <Col  xs={3}><ul>
+                    <li ><a style={{color: "rgb(2 95 130)"}} href="https://github.com/ArturoBarrios/MusicClassification" target="_blank">Github</a></li>
+                    <li><a style={{color: "rgb(2 95 130)"}} href="mailto:arturobarrios357@gmail.com" >Email</a></li>
+                    
+                </ul></Col>
+                    
+                </Row>
             </Container>
-            </div>
-        </Navbar>
+            
+                
+            
+            
+        </div>
 
         
     </div>

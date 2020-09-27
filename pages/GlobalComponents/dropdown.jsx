@@ -41,7 +41,7 @@ class DropDown extends React.Component {
                     <Dropdown.Menu>
                         <Dropdown.Item eventKey="ABRSM_2019_2021(1-8)V1">ABRSM_2019_2021(1-8)V1</Dropdown.Item>
                         <Dropdown.Item eventKey="ABRSM_2019_2021(1-8)V2">ABRSM_2019_2021(1-8)V2</Dropdown.Item>
-                        {/* <Dropdown.Item eventKey="ABRSM_2019_2021(1-8)V3">ABRSM_2019_2021(1-8)V3</Dropdown.Item> */}
+                        <Dropdown.Item eventKey="ABRSM_2019_2021(1-8)V3">ABRSM_2019_2021(1-8)V3</Dropdown.Item>
                         <Dropdown.Item eventKey="ABRSM_2020_2021(1-8)V1">ABRSM_2020_2021(1-8)V1</Dropdown.Item>
                         <Dropdown.Item eventKey="ABRSM_2020_2021(1-8)V2">ABRSM_2020_2021(1-8)V2</Dropdown.Item>
                         {/* <Dropdown.Item eventKey="ABRSM_2020_2021(1-8)V3">ABRSM_2020_2021(1-8)V3</Dropdown.Item> */}

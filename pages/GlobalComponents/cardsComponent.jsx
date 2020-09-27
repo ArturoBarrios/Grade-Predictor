@@ -110,12 +110,20 @@ import Button from 'react-bootstrap/Button'
                             <Card>
                                 <Card.Img style={{"height": 200}} variant="top" src="update.svg" />
                                 <Card.Body>
-                                <Card.Title style={{textAlign: "center"}}>Plans for future</Card.Title>
+                                <Card.Title style={{textAlign: "center"}}>Future Updates</Card.Title>
                                 <Card.Text>
                                     <Accordion defaultActiveKey="">
                                         <Card>
                                             <Accordion.Toggle as={Card.Header} eventKey="">
                                             Improving accuracy of grade predictions
+                                            </Accordion.Toggle>
+                                            <Accordion.Collapse eventKey="0">
+                                            <Card.Body></Card.Body>
+                                            </Accordion.Collapse>
+                                        </Card>
+                                        <Card>
+                                            <Accordion.Toggle as={Card.Header} eventKey="">
+                                            Increase prediction speed
                                             </Accordion.Toggle>
                                             <Accordion.Collapse eventKey="0">
                                             <Card.Body></Card.Body>

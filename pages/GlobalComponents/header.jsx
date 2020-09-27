@@ -11,7 +11,7 @@ function Header(props){
                 <div style={{display: "flex",justifyContent: 'center'}}>
                     <img
                         alt=""
-                        src="/logoText2.png"
+                        src="/logo_test2.png"
                         style={{ width: "100%" }}
                         className="d-inline-block align-middle"
                     />{' '}
