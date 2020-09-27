@@ -23,21 +23,25 @@ function footer(props){
             <Container style={{marginTop:"3em"}}>
                 
                 <Row>
-                    <Col  xs={3}><h3 style={{color: "rgb(2 95 130)"}}>Resources</h3></Col>
-                    <Col  xs={3}><h3 style={{color: "rgb(2 95 130)"}}>Project</h3></Col>
+                    <Col  ><h3 style={{color: "rgb(2 95 130)"}}>Resources</h3></Col>
+                    <Col  ><h3 style={{color: "rgb(2 95 130)"}}>Project</h3></Col>
+                    <Col ></Col>
+                    <Col ></Col>
                     
                 </Row>
                 <Row>
-                    <Col  xs={3}><ul>
+                    <Col  ><ul>
                     <li ><a style={{color: "rgb(2 95 130)"}} href="https://scikit-learn.org/stable/" target="_blank">Scikit-learn</a></li>
                     <li><a style={{color: "rgb(2 95 130)"}} href="http://web.mit.edu/music21/" target="_blank">Music21</a></li>
                     <li><a style={{color: "rgb(2 95 130)"}} href="http://jmir.sourceforge.net/jSymbolic.html" target="_blank">Jsymbolic</a></li>
                     </ul></Col>
-                    <Col  xs={3}><ul>
+                    <Col  ><ul>
                     <li ><a style={{color: "rgb(2 95 130)"}} href="https://github.com/ArturoBarrios/MusicClassification" target="_blank">Github</a></li>
                     <li><a style={{color: "rgb(2 95 130)"}} href="mailto:arturobarrios357@gmail.com" >Email</a></li>
                     
                 </ul></Col>
+                <Col ></Col>
+                <Col ></Col>
                     
                 </Row>
             </Container>
