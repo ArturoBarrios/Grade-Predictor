@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div >
 
-     <div style={{height: "350px"}} className="container"  >
+     <div style={{height: "350px", position:"relative"}} className="container"  >
       <Header></Header>
      </div>
      <div className="container">
