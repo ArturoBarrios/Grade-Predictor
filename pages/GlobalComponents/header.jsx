@@ -12,7 +12,7 @@ function Header(props){
                     <img
                         alt=""
                         src="/logo_test2.png"
-                        style={{ minWidth: "100%", minHeight:"100%", objectFit: "cover" }}
+                        style={{ width: "100%", height:"100%", objectFit: "cover" }}
                         className="d-inline-block align-middle"
                     />{' '}
             {/* </div> */}
