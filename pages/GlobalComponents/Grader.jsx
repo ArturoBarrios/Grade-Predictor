@@ -70,7 +70,7 @@ class Grader extends React.Component {
      return files;
     }
 
-    gradeSongsHandler(){
+    async gradeSongsHandler(){
       var fileChosen = this.state.fileNames!=null;
       var modelChosen = this.state.model!=null;
       if(!fileChosen){
@@ -83,11 +83,7 @@ class Grader extends React.Component {
       console.log("files chosen: ", this.state.formDataFiles)
       if(modelChosen&&fileChosen){
         this.filesChosen();
-        const api = axios.create({
-          // baseURL: apiURL,
-          timeout: 10 * 60 * 1000
-        })
-        api.post('https://grade-predictor-api.herokuapp.com/get_grades', this.state.formDataFiles, {
+        var res = await axios.post('https://grade-predictor-api.herokuapp.com/get_grades', this.state.formDataFiles, {
           headers: {
             'Access-Control-Allow-Origin' : '*',
             'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
@@ -97,13 +93,20 @@ class Grader extends React.Component {
             'model': this.state.model
           },
         })
-          .then(res => {
-            console.log("res: ", res)
-            this.resultState(res.data);
-          }).catch(err =>{
-            console.log("errrr: ", err)
-            this.fileState();
-          });
+        console.log("axios result: ",res);
+        if(res)
+          this.resultState(res.data);
+        else
+          this.fileState();
+
+
+          // .then(res => {
+          //   console.log("res: ", res)
+          //   this.resultState(res.data);
+          // }).catch(err =>{
+          //   console.log("errrr: ", err)
+          //   this.fileState();
+          // });
       }
 
     }

@@ -18,6 +18,5 @@
     "react-dom": "16.13.1",
     "react-download-link": "^2.3.0",
     "social-media-icons-react": "^1.0.10"
-  },
-  "proxy": "http://localhost:5000"
+  }
 }
