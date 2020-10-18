@@ -83,7 +83,11 @@ class Grader extends React.Component {
       console.log("files chosen: ", this.state.formDataFiles)
       if(modelChosen&&fileChosen){
         this.filesChosen();
-        axios.post('https://grade-predictor-api.herokuapp.com/get_grades', this.state.formDataFiles, {
+        const api = axios.create({
+          baseURL: apiURL,
+          timeout: 10 * 60 * 1000
+        })
+        api.post('https://grade-predictor-api.herokuapp.com/get_grades', this.state.formDataFiles, {
           headers: {
             'Access-Control-Allow-Origin' : '*',
             'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
