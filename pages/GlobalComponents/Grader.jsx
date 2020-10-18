@@ -84,7 +84,7 @@ class Grader extends React.Component {
       if(modelChosen&&fileChosen){
         this.filesChosen();
         const api = axios.create({
-          baseURL: apiURL,
+          // baseURL: apiURL,
           timeout: 10 * 60 * 1000
         })
         api.post('https://grade-predictor-api.herokuapp.com/get_grades', this.state.formDataFiles, {
