@@ -18,6 +18,7 @@ class Grader extends React.Component {
       this.state = {didChooseFile: false}
       this.state = {didChooseModel: false}
       this.fileHandler = this.fileHandler.bind(this)
+      this.timeout = this.timeout.bind(this)
       this.modelChosen = this.modelChosen.bind(this)
       this.gradeSongsHandler = this.gradeSongsHandler.bind(this)
       this.resetStates = this.resetStates.bind(this)
@@ -81,35 +82,76 @@ class Grader extends React.Component {
       }
       console.log("bool values: ", fileChosen, "  ", modelChosen)
       console.log("files chosen: ", this.state.formDataFiles)
+      var redis_key = parseInt(Math.random()*1000000000)
       if(modelChosen&&fileChosen){
         this.filesChosen();
-        var res = await axios.post('https://grade-predictor-api.herokuapp.com/get_grades', this.state.formDataFiles, {
+        //http://127.0.0.1:5000/
+        //https://grade-predictor-api.herokuapp.com
+        var res = axios.post('http://127.0.0.1:5000/get_grades', this.state.formDataFiles, {
           headers: {
             'Access-Control-Allow-Origin' : '*',
             'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
             'Content-Type': 'multipart/form-data'
           },
           params:{
-            'model': this.state.model
+            'model': this.state.model,
+            'key': redis_key
           },
         })
-        console.log("axios result: ",res);
-        if(res)
-          this.resultState(res.data);
-        else
-          this.fileState();
-
-
+        this.getGrades(redis_key)
           // .then(res => {
           //   console.log("res: ", res)
-          //   this.resultState(res.data);
+          //   this.getGrades(redis_key);
+          //   // this.resultState(res.data);
           // }).catch(err =>{
           //   console.log("errrr: ", err)
-          //   this.fileState();
+          //   // this.fileState();
           // });
+       
+        
+          
+        
+
+            
       }
 
     }
+    async getGrades(redis_key){
+      axios.post('http://127.0.0.1:5000/get_grades_key?key='+redis_key,{
+            headers: {
+              'Access-Control-Allow-Origin' : '*',
+              'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+              'Content-Type': 'multipart/form-data'
+
+            },
+            
+          }).then(async res => {
+            console.log("ressss: ", res.data)
+            console.log("resss length: ", Object.keys(res.data).length)
+            if(Object.keys(res.data).length>0){
+              // this.resultState();
+              this.resultState(res.data);
+            }
+            else{
+              console.log("else!!");
+              await this.timeout(5000, true);
+              console.log("after timeout!!!");
+              this.getGrades(redis_key)
+              
+
+            }
+          }).catch(err =>{
+            console.log("errr")
+            this.fileState();
+          })
+          
+
+    }
+    async timeout(delay, call_again) {
+      console.log("timeout called")
+      return new Promise( res => setTimeout(res, delay) );
+
+  }
 
     fileState() {
       this.setState({
