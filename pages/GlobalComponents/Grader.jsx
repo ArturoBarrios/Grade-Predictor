@@ -85,9 +85,10 @@ class Grader extends React.Component {
       var redis_key = parseInt(Math.random()*1000000000)
       if(modelChosen&&fileChosen){
         this.filesChosen();
-        //http://127.0.0.1:5000/
+        //http://localhost:5000/test/
         //https://grade-predictor-api.herokuapp.com
-        var res = axios.post('https://grade-predictor-api.herokuapp.com/get_grades', this.state.formDataFiles, {
+        //https://grade-predictor-api.herokuapp.com/get_grades
+        var res = axios.post('https://grade-predictor-api.herokuapp.com/test', this.state.formDataFiles, {
           headers: {
             'Access-Control-Allow-Origin' : '*',
             'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
@@ -99,14 +100,7 @@ class Grader extends React.Component {
           },
         })
         this.getGrades(redis_key)
-          // .then(res => {
-          //   console.log("res: ", res)
-          //   this.getGrades(redis_key);
-          //   // this.resultState(res.data);
-          // }).catch(err =>{
-          //   console.log("errrr: ", err)
-          //   // this.fileState();
-          // });
+
        
         
           
@@ -134,7 +128,7 @@ class Grader extends React.Component {
             }
             else{
               console.log("else!!");
-              await this.timeout(5000, true);
+              await this.timeout(10000, true);
               console.log("after timeout!!!");
               this.getGrades(redis_key)
               
