@@ -88,7 +88,7 @@ class Grader extends React.Component {
         //http://localhost:5000/test/
         //https://grade-predictor-api.herokuapp.com
         //https://grade-predictor-api.herokuapp.com/get_grades
-        var res = axios.post('http://localhost:5000/test', this.state.formDataFiles, {
+        var res = axios.post('https://grade-predictor-api.herokuapp.com/test', this.state.formDataFiles, {
           headers: {
             'Access-Control-Allow-Origin' : '*',
             'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
@@ -111,7 +111,7 @@ class Grader extends React.Component {
 
     }
     async getGrades(redis_key){
-      axios.post('http://localhost:5000/get_grades_key?key='+redis_key,{
+      axios.post('https://grade-predictor-api.herokuapp.com/get_grades_key?key='+redis_key,{
             headers: {
               'Access-Control-Allow-Origin' : '*',
               'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
