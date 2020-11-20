@@ -71,7 +71,7 @@ class Configure extends React.Component {
                             <tr>
                             {/* <th>#</th> */}
                             {/* <th>Piece</th> */}
-                            <th>Composer</th>
+                            <th>Title</th>
                             <th>Grade</th>
                             {/* <th>Link</th> */}
                             </tr>

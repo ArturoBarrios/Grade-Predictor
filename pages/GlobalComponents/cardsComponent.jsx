@@ -33,7 +33,7 @@ import Button from 'react-bootstrap/Button'
                                     </Card>
                                     <Card>
                                         <Accordion.Toggle as={Card.Header} eventKey="">
-                                        Choose a grade predictor model to grade your pieces. 
+                                        Choose a model to grade your pieces. 
                                         </Accordion.Toggle>
                                         <Accordion.Collapse eventKey="1">
                                         <Card.Body></Card.Body>
@@ -59,14 +59,14 @@ import Button from 'react-bootstrap/Button'
                             <Card>
                                 <Card.Img style={{"height": 200}} variant="top" src="model.svg" />
                                 <Card.Body>
-                                <Card.Title style={{textAlign: "center"}}>Grade Predictors</Card.Title>
+                                <Card.Title style={{textAlign: "center"}}>Grade Predictors Models</Card.Title>
                                 <Card.Text>
                                     <Accordion defaultActiveKey="">
                                     <Card >
-                                            <Accordion.Toggle as={Card.Header} as={Button} style={{textAlign: 'left' , backgroundColor:'lightGrey'}} eventKey="0">
-                                            Versions
+                                            <Accordion.Toggle as={Card.Header}  eventKey="0">
+                                            RCM - Grade Range(1-10)
                                             </Accordion.Toggle>
-                                            <Accordion.Collapse eventKey="0">
+                                            {/* <Accordion.Collapse eventKey="0">
                                             <Card.Body>
                                             <ListGroup>
                                                 <ListGroup.Item>V1: No Scaling|No Feature Reduction</ListGroup.Item>
@@ -74,11 +74,11 @@ import Button from 'react-bootstrap/Button'
                                                 <ListGroup.Item>V3: Scaling|Feature Reduction</ListGroup.Item>
                                              </ListGroup>
                                             </Card.Body>
-                                            </Accordion.Collapse>
+                                            </Accordion.Collapse> */}
                                         </Card>
                                         <Card >
-                                            <Accordion.Toggle as={Card.Header} as={Button} style={{textAlign: 'left' , backgroundColor:'lightGrey'}} eventKey="1">
-                                            ABRSM
+                                            <Accordion.Toggle as={Card.Header}  eventKey="1">
+                                            ABRSM Grade Range(1-8)
                                             </Accordion.Toggle>
                                             <Accordion.Collapse eventKey="1">
                                             <Card.Body>
@@ -91,8 +91,8 @@ import Button from 'react-bootstrap/Button'
                                             </Accordion.Collapse>
                                         </Card>
                                         <Card>
-                                            <Accordion.Toggle as={Card.Header} as={Button} style={{textAlign: 'left' , backgroundColor:'lightGrey'}} eventKey="2">
-                                            Piano Marvel
+                                            <Accordion.Toggle as={Card.Header}  eventKey="2">
+                                            Piano Marvel Grade Range(0-10)
                                             </Accordion.Toggle>
                                             <Accordion.Collapse eventKey="2">
                                             <Card.Body>5000+ songs of varying genres</Card.Body>
@@ -110,12 +110,12 @@ import Button from 'react-bootstrap/Button'
                             <Card>
                                 <Card.Img style={{"height": 200}} variant="top" src="update.svg" />
                                 <Card.Body>
-                                <Card.Title style={{textAlign: "center"}}>Future Updates</Card.Title>
+                                <Card.Title style={{textAlign: "center"}}>Upcoming Updates</Card.Title>
                                 <Card.Text>
                                     <Accordion defaultActiveKey="">
                                         <Card>
                                             <Accordion.Toggle as={Card.Header} eventKey="">
-                                            Improving accuracy of grade predictions
+                                            Improving accuracy of models
                                             </Accordion.Toggle>
                                             <Accordion.Collapse eventKey="0">
                                             <Card.Body></Card.Body>

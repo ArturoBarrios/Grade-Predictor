@@ -24,7 +24,7 @@ function footer(props){
                 
                 <Row>
                     <Col  ><h3 style={{color: "rgb(2 95 130)"}}>Resources</h3></Col>
-                    <Col  ><h3 style={{color: "rgb(2 95 130)"}}>Project</h3></Col>
+                    <Col  ><h3 style={{color: "rgb(2 95 130)"}}></h3></Col>
                     <Col ></Col>
                     <Col ></Col>
                     
@@ -36,8 +36,8 @@ function footer(props){
                     <li><a style={{color: "rgb(2 95 130)"}} href="http://jmir.sourceforge.net/jSymbolic.html" target="_blank">Jsymbolic</a></li>
                     </ul></Col>
                     <Col  ><ul>
-                    <li ><a style={{color: "rgb(2 95 130)"}} href="https://github.com/ArturoBarrios/MusicClassification" target="_blank">Github</a></li>
-                    <li><a style={{color: "rgb(2 95 130)"}} href="mailto:arturobarrios357@gmail.com" >Email</a></li>
+                    {/* <li ><a style={{color: "rgb(2 95 130)"}} href="https://github.com/ArturoBarrios/MusicClassification" target="_blank">Github</a></li>
+                    <li><a style={{color: "rgb(2 95 130)"}} href="mailto:arturobarrios357@gmail.com" >Email</a></li> */}
                     
                 </ul></Col>
                 <Col ></Col>
