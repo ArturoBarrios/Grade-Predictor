@@ -20,8 +20,8 @@ class SongList extends React.Component {
           })
       }
       static getDerivedStateFromProps(props, state) {
-          console.log("songFiles: ", props.fileNames)
-          console.log("stateFile: ", state.prevFileNames)
+          // console.log("songFiles: ", props.fileNames)
+          // console.log("stateFile: ", state.prevFileNames)
         if (props.fileNames !== state.prevFileNames) {
           return {
             prevFileNames: props.fileNames,
@@ -33,7 +33,7 @@ class SongList extends React.Component {
       }
       
       render(){
-        console.log("even nicer: ", this.props.fileNames)
+        // console.log("even nicer: ", this.props.fileNames)
         
         
 

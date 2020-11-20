@@ -22,7 +22,7 @@ class Configure extends React.Component {
         
       }
       filesChosen(){
-          console.log("filesChosen: ", this.props.songFiles());
+        //   console.log("filesChosen: ", this.props.songFiles());
 
       }
     componentDidMount(){
@@ -32,7 +32,7 @@ class Configure extends React.Component {
         
     }
     handleSelect(event) {
-        console.log("Tab selected")    
+        // console.log("Tab selected")    
       } 
      
     render(){

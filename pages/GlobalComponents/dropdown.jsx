@@ -18,7 +18,7 @@ class DropDown extends React.Component {
         this.props.modelChosen(event);
       }
       testEvent(){
-        console.log("test event");
+        // console.log("test event");
       }
       componentDidMount() {
         this.setState({

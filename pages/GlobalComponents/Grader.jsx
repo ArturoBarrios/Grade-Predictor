@@ -61,7 +61,7 @@ class Grader extends React.Component {
 
     setFileNames(formData){
       var files = [];
-      console.log("form data files: ", formData)
+      // console.log("form data files: ", formData)
       for(var pair of formData.entries()) {
         files.push(pair[1].name) 
       }
@@ -75,20 +75,20 @@ class Grader extends React.Component {
       var fileChosen = this.state.fileNames!=null;
       var modelChosen = this.state.model!=null;
       if(!fileChosen){
-        console.log("file not chosen")
+        // console.log("file not chosen")
       }
       if(!modelChosen){
-        console.log("model not chosen")
+        // console.log("model not chosen")
       }
-      console.log("bool values: ", fileChosen, "  ", modelChosen)
-      console.log("files chosen: ", this.state.formDataFiles)
+      // console.log("bool values: ", fileChosen, "  ", modelChosen)
+      // console.log("files chosen: ", this.state.formDataFiles)
       var redis_key = parseInt(Math.random()*1000000000)
       if(modelChosen&&fileChosen){
         this.filesChosen();
         //http://localhost:5000/test/
         //https://grade-predictor-api.herokuapp.com
         //https://grade-predictor-api.herokuapp.com/get_grades
-        var res = axios.post('https://grade-predictor-api.herokuapp.com/test', this.state.formDataFiles, {
+        var res = axios.post('http://localhost:5000/test', this.state.formDataFiles, {
           headers: {
             'Access-Control-Allow-Origin' : '*',
             'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
@@ -111,7 +111,7 @@ class Grader extends React.Component {
 
     }
     async getGrades(redis_key){
-      axios.post('https://grade-predictor-api.herokuapp.com/get_grades_key?key='+redis_key,{
+      axios.post('http://localhost:5000/get_grades_key?key='+redis_key,{
             headers: {
               'Access-Control-Allow-Origin' : '*',
               'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
@@ -120,29 +120,29 @@ class Grader extends React.Component {
             },
             
           }).then(async res => {
-            console.log("ressss: ", res.data)
-            console.log("resss length: ", Object.keys(res.data).length)
+            // console.log("ressss: ", res.data)
+            // console.log("resss length: ", Object.keys(res.data).length)
             if(Object.keys(res.data).length>0){
               // this.resultState();
               this.resultState(res.data);
             }
             else{
-              console.log("else!!");
+              // console.log("else!!");
               await this.timeout(10000, true);
-              console.log("after timeout!!!");
+              // console.log("after timeout!!!");
               this.getGrades(redis_key)
               
 
             }
           }).catch(err =>{
-            console.log("errr")
+            // console.log("errr")
             this.fileState();
           })
           
 
     }
     async timeout(delay, call_again) {
-      console.log("timeout called")
+      // console.log("timeout called")
       return new Promise( res => setTimeout(res, delay) );
 
   }
@@ -157,14 +157,14 @@ class Grader extends React.Component {
       this.setState({
         gradedSongs: grades
       });
-      console.log("result gradedSongs: ", this.state.gradedSongs)
+      // console.log("result gradedSongs: ", this.state.gradedSongs)
       this.setState({
         gradeState: 2
       })
     }
 
     modelChosen(chosenModel) {
-      console.log("model chosen: ", chosenModel)
+      // console.log("model chosen: ", chosenModel)
       this.setState({
         model: chosenModel
       })
