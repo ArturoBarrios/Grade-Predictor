@@ -59,7 +59,7 @@ import Button from 'react-bootstrap/Button'
                             <Card>
                                 <Card.Img style={{"height": 200}} variant="top" src="model.svg" />
                                 <Card.Body>
-                                <Card.Title style={{textAlign: "center"}}>Grade Predictors Models</Card.Title>
+                                <Card.Title style={{textAlign: "center"}}>Grade Predictor Models</Card.Title>
                                 <Card.Text>
                                     <Accordion defaultActiveKey="">
                                     <Card >
