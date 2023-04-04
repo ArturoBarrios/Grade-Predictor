@@ -71,7 +71,8 @@ class Grader extends React.Component {
      return files;
     }
 
-    async gradeSongsHandler(){
+    //gets called first
+    async gradeSongsHandler(){      
       var fileChosen = this.state.fileNames!=null;
       var modelChosen = this.state.model!=null;
       if(!fileChosen){
@@ -88,18 +89,28 @@ class Grader extends React.Component {
         //http://localhost:5000/test/
         //https://grade-predictor-api.herokuapp.com
         //https://grade-predictor-api.herokuapp.com/get_grades
-        var res = axios.post('https://grade-predictor-api.herokuapp.com/test', this.state.formDataFiles, {
-          headers: {
-            'Access-Control-Allow-Origin' : '*',
-            'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-            'Content-Type': 'multipart/form-data'
-          },
-          params:{
-            'model': this.state.model,
-            'key': redis_key
-          },
-        })
-        this.getGrades(redis_key)
+        axios.get('http://localhost:5000/test/', {
+      headers: {
+        'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+    .then(response => {      
+    })
+       
+        // var res = axios.post('http://localhost:5000/test/', this.state.formDataFiles, {
+        //   headers: {
+        //     'Access-Control-Allow-Origin' : '*',
+        //     'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+        //     'Content-Type': 'multipart/form-data'
+        //   },
+        //   params:{
+        //     'model': this.state.model,
+        //     'key': redis_key
+        //   },
+        // })
+        // this.getGrades(redis_key)
 
        
         
@@ -111,7 +122,8 @@ class Grader extends React.Component {
 
     }
     async getGrades(redis_key){
-      axios.post('https://grade-predictor-api.herokuapp.com/get_grades_key?key='+redis_key,{
+      print("getGrades");
+      axios.post('http://127.0.0.1:5000/get_grades_key?key='+redis_key,{
             headers: {
               'Access-Control-Allow-Origin' : '*',
               'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
